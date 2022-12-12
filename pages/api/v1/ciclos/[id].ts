@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
        *        content:
        *          application/json:
        *            schema:
-       *              $ref: "#/components/schemas/cicos"
+       *              $ref: "#/components/schemas/ciclos"
        *      404:
        *        description: asistencia no encontrada
        *        content:

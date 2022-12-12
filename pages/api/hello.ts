@@ -220,7 +220,6 @@ const swaggerHandler = withSwagger({
      *           type: number
      *           description: date
      *       required:
-     *         - id_carga_plan
      *         - id_persona
      *         - id_periodo
      *         - id_modalidad
@@ -280,6 +279,12 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * tags:
+     *   name: docentes
+     *   description: se registra el codigo del docente
+     */
+    /**
+     * @swagger
      * components:
      *   schemas:
      *     docentes:
@@ -293,19 +298,12 @@ const swaggerHandler = withSwagger({
      *           description: date
      *         
      *       required:
-     *         - nombre
-     *         - alias
+     *         - id_persona  
+     *         - codigo
      *       example:
      *         id_persona: 1
-     *         nombre: Juan
      *         codigo: 2009
      *        
-     */
-    /**
-     * @swagger
-     * tags:
-     *   name: docentes
-     *   description: se registra el codigo del docente
      */
     /**
      * @swagger
@@ -315,9 +313,72 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     escuelas:
+     *       type: object
+     *       properties:
+     *         id_escuela:
+     *           type: String
+     *           description: date
+     *         nombre: 
+     *           type: String
+     *           description: date
+	   *         estado: 
+     *           type: String
+     *           description: date
+	   *         id_facultad:
+     *           type: Number
+     *           description: date
+     *         
+     *       required:  
+     *         - nombre
+     *         - estado
+     *         - id_facultad
+     *       example:
+     *         id_escuela: 1
+     *         nombre: Sistemas
+     *         estado: Activo
+     *         id_facultad: 1
+     *        
+     */
+    /**
+     * @swagger
      * tags:
      *   name: escuela_sucursal
      *   description: tiene el estado de una sucursal por ejemplo la sucursal de tarapoto esta inactivo
+     */
+    /**
+     * @swagger
+     * components:
+     *   schemas:
+     *     escuelas_sucur:
+     *       type: object
+     *       properties:
+     *         id_escuela_sucursal:
+     *           type: Number
+     *           description: date
+     *         id_escuela: 
+     *           type: Number
+     *           description: date
+	   *         id_sucursal: 
+     *           type: Number
+     *           description: date
+	   *         estado:
+     *           type: String
+     *           description: date
+     *         
+     *       required:
+     *         - id_escuela
+     *         - id_sucursal
+     *         - estado
+     *       example:
+     *         id_escuela_sucursal: 1
+     *         id_escuela: 1
+     *         id_facultad: 1
+     *         estado: Activo
+     *         
+     *        
      */
     /**
      * @swagger
@@ -327,9 +388,71 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     facultades:
+     *       type: object
+     *       properties:
+     *         id_facultad:
+     *           type: Number
+     *           description: date
+     *         nombre: 
+     *           type: String
+     *           description: date
+	   *         estado: 
+     *           type: String
+     *           description: date
+	   *         alias:
+     *           type: String
+     *           description: date
+     *         
+     *       required:
+     *         - nombre
+     *         - estado
+     *         - alias
+     *       example:
+     *         id_facultad: 1
+     *         nombre: Facultad de Ingenieria y Arquitectura 
+     *         estado: Activo
+     *         alias: FIA              
+     *        
+     */
+    /**
+     * @swagger
      * tags:
      *   name: grupos
      *   description: grupos de los ciclos ejemplo 1,2,3,4,5
+     */
+    /**
+     * @swagger
+     * components:
+     *   schemas:
+     *     grupos:
+     *       type: object
+     *       properties:
+     *         id_grupo:
+     *           type: Number
+     *           description: date
+     *         nombre: 
+     *           type: String
+     *           description: date
+	   *         estado: 
+     *           type: String
+     *           description: date
+	   *         alias:
+     *           type: String
+     *           description: date
+     *         
+     *       required:
+     *         - nombre
+     *         - estado
+     *         - alias
+     *       example:
+     *         id_grupo: 1
+     *         nombre: Ciclo 1 Grupo 2 
+     *         estado: Activo
+     *         alias: C1 G2              
+     *        
      */
     /**
      * @swagger
@@ -339,9 +462,60 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     modalidades:
+     *       type: object
+     *       properties:
+     *         id_modalidad:
+     *           type: Number
+     *           description: date
+     *         nombre: 
+     *           type: String
+     *           description: date
+	   *         estado: 
+     *           type: String
+     *           description: date         
+     *       required:
+     *         - nombre
+     *         - estado
+     *       example:
+     *         id_modalidad: 1
+     *         nombre: Alumno - Presencial o Semipresencial - Docente - Contratado o no Contratado 
+     *         estado: Activo              
+     *        
+     */
+    /**
+     * @swagger
      * tags:
      *   name: participantes
      *   description: almacena las horas del participante
+     */
+    /**
+     * @swagger
+     * components:
+     *   schemas:
+     *     participantes:
+     *       type: object
+     *       properties:
+     *         id_persona:
+     *           type: Number
+     *           description: date
+     *         codigo: 
+     *           type: Number
+     *           description: date
+	   *         horas_total: 
+     *           type: Number
+     *           description: date         
+     *       required:
+     *         - id_persona
+     *         - codigo
+     *         - horas_total
+     *       example:
+     *         id_persona: 1
+     *         codigo: 201811411 
+     *         horas_total: 20 horas               
+     *        
      */
     /**
      * @swagger
@@ -351,9 +525,89 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     periodos:
+     *       type: object
+     *       properties:
+     *         id_periodos:
+     *           type: Number
+     *           description: date
+     *         nombre: 
+     *           type: Number
+     *           description: date
+	   *         estado: 
+     *           type: String
+     *           description: date         
+     *       required:
+     *         - nombre
+     *         - estado
+     *       example:
+     *         id_periodos: 1
+     *         nombre: Periodo Presencial Semipresencial o a Distancia 
+     *         estado: activo               
+     *        
+     */
+    /**
+     * @swagger
      * tags:
      *   name: personas
      *   description: informacion de las personas alumno y docente, etc
+     */
+    /**
+     * @swagger
+     * components:
+     *   schemas:
+     *     personas:
+     *       type: object
+     *       properties:
+     *         id_persona:
+     *           type: Number
+     *           description: date
+     *         nombre: 
+     *           type: Number
+     *           description: date
+     *         appaterno: 
+     *           type: String
+     *           description: date
+     *         apmaterno: 
+     *           type: String
+     *           description: date
+     *         dni: 
+     *           type: Number
+     *           description: date
+     *         direccion: 
+     *           type: String
+     *           description: date
+     *         correo: 
+     *           type: String
+     *           description: date
+     *         numero: 
+     *           type: Number
+     *           description: date
+	   *         fecha_registro: 
+     *           type: Date
+     *           description: date         
+     *       required:
+     *         - nombre
+     *         - appaterno
+     *         - apmaterno
+     *         - dni
+     *         - direccion
+     *         - correo
+     *         - numero
+     *         - fecha_registro
+     *       example:
+     *         id_periodos: 1
+     *         nombre: Jose 
+     *         appaterno: Condori
+     *         apmaterno: Ccapa
+     *         dni: 72819237
+     *         direccion: Av. Los Geranios N-16 
+     *         correo: angel.cc
+     *         numero: 987213721
+     *         fecha_registro: 12-12-22               
+     *        
      */
     /**
      * @swagger
