@@ -7,6 +7,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 	switch (method) {
 		case 'GET':
+			/**
+       * @swagger
+       * /api/v1/grupos/{id}:
+       *  get:
+       *    summary: esta funcion muestra una lista de escuela sucursal por el id
+       *    tags: [grupos]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: sucursal encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/grupos"
+       *      404:
+       *        description: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: '#/components/schemas/nofound'
+       *
+       */
 			try {
 				const id_grupo = [req.query.id];
 				const getGrupo = await ModelGrupo.findOne({
@@ -17,6 +40,36 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 				return res.status(500).json({ message: error });
 			}
 		case 'PUT':
+			/**
+       * @swagger
+       * /api/v1/grupos/{id}:
+       *  put:
+       *    summary: actualizar por id
+       *    tags: [grupos]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    requestBody:
+       *      required: true
+       *      content:
+       *        application/json:
+       *          schema:
+       *            $ref: "#/components/schemas/grupos"
+       *    responses:
+       *      200:
+       *        description: actualizo el dato
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/grupos"
+       *      404:
+       *        description: error
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/nofound"
+       *
+       *
+       */
 			try {
 				const id_grupo = [req.query.id];
 				const { nombre, estado, alias } = req.body;
@@ -33,6 +86,28 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 				return res.status(500).json({ message: error });
 			}
 		case 'DELETE':
+			/**
+       * @swagger
+       * /api/v1/grupos/{id}:
+       *  delete:
+       *    summary: eliminar asistencia
+       *    tags: [grupos]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: la asistencia fue eliminada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/grupos"
+       *      404:
+       *        decription: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/nofound"
+       */
 			try {
 				const id_grupo = [req.query.id];
 				await ModelGrupo.destroy({

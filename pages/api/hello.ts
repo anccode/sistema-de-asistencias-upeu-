@@ -261,13 +261,13 @@ const swaggerHandler = withSwagger({
      *         id_ciclo:
      *           type: String
      *           escription: date
-     *         nombre: 
+     *         nombre:
      *           type: String
      *           description: date
      *         alias:
      *           type: String
      *           description: date
-     *         
+     *
      *       required:
      *         - nombre
      *         - alias
@@ -275,7 +275,7 @@ const swaggerHandler = withSwagger({
      *         id_ciclo: 1
      *         nombre: Ciclo IV
      *         alias: C-4
-     *        
+     *
      */
     /**
      * @swagger
@@ -293,17 +293,17 @@ const swaggerHandler = withSwagger({
      *         id_persona:
      *           type: String
      *           escription: date
-     *         codigo: 
+     *         codigo:
      *           type: String
      *           description: date
-     *         
+     *
      *       required:
-     *         - id_persona  
+     *         - id_persona
      *         - codigo
      *       example:
      *         id_persona: 1
      *         codigo: 2009
-     *        
+     *
      */
     /**
      * @swagger
@@ -321,17 +321,17 @@ const swaggerHandler = withSwagger({
      *         id_escuela:
      *           type: String
      *           description: date
-     *         nombre: 
+     *         nombre:
      *           type: String
      *           description: date
-	   *         estado: 
+     *         estado:
      *           type: String
      *           description: date
-	   *         id_facultad:
+     *         id_facultad:
      *           type: Number
      *           description: date
-     *         
-     *       required:  
+     *
+     *       required:
      *         - nombre
      *         - estado
      *         - id_facultad
@@ -340,7 +340,7 @@ const swaggerHandler = withSwagger({
      *         nombre: Sistemas
      *         estado: Activo
      *         id_facultad: 1
-     *        
+     *
      */
     /**
      * @swagger
@@ -352,22 +352,22 @@ const swaggerHandler = withSwagger({
      * @swagger
      * components:
      *   schemas:
-     *     escuelas_sucur:
+     *     escuela_sucursal:
      *       type: object
      *       properties:
      *         id_escuela_sucursal:
      *           type: Number
      *           description: date
-     *         id_escuela: 
+     *         id_escuela:
      *           type: Number
      *           description: date
-	   *         id_sucursal: 
+     *         id_sucursal:
      *           type: Number
      *           description: date
-	   *         estado:
+     *         estado:
      *           type: String
      *           description: date
-     *         
+     *
      *       required:
      *         - id_escuela
      *         - id_sucursal
@@ -377,8 +377,8 @@ const swaggerHandler = withSwagger({
      *         id_escuela: 1
      *         id_facultad: 1
      *         estado: Activo
-     *         
-     *        
+     *
+     *
      */
     /**
      * @swagger
@@ -396,26 +396,26 @@ const swaggerHandler = withSwagger({
      *         id_facultad:
      *           type: Number
      *           description: date
-     *         nombre: 
+     *         nombre:
      *           type: String
      *           description: date
-	   *         estado: 
+     *         estado:
      *           type: String
      *           description: date
-	   *         alias:
+     *         alias:
      *           type: String
      *           description: date
-     *         
+     *
      *       required:
      *         - nombre
      *         - estado
      *         - alias
      *       example:
      *         id_facultad: 1
-     *         nombre: Facultad de Ingenieria y Arquitectura 
+     *         nombre: Facultad de Ingenieria y Arquitectura
      *         estado: Activo
-     *         alias: FIA              
-     *        
+     *         alias: FIA
+     *
      */
     /**
      * @swagger
@@ -433,26 +433,26 @@ const swaggerHandler = withSwagger({
      *         id_grupo:
      *           type: Number
      *           description: date
-     *         nombre: 
+     *         nombre:
      *           type: String
      *           description: date
-	   *         estado: 
+     *         estado:
      *           type: String
      *           description: date
-	   *         alias:
+     *         alias:
      *           type: String
      *           description: date
-     *         
+     *
      *       required:
      *         - nombre
      *         - estado
      *         - alias
      *       example:
      *         id_grupo: 1
-     *         nombre: Ciclo 1 Grupo 2 
+     *         nombre: Ciclo 1 Grupo 2
      *         estado: Activo
-     *         alias: C1 G2              
-     *        
+     *         alias: C1 G2
+     *
      */
     /**
      * @swagger
@@ -470,20 +470,20 @@ const swaggerHandler = withSwagger({
      *         id_modalidad:
      *           type: Number
      *           description: date
-     *         nombre: 
+     *         nombre:
      *           type: String
      *           description: date
-	   *         estado: 
+     *         estado:
      *           type: String
-     *           description: date         
+     *           description: date
      *       required:
      *         - nombre
      *         - estado
      *       example:
      *         id_modalidad: 1
-     *         nombre: Alumno - Presencial o Semipresencial - Docente - Contratado o no Contratado 
-     *         estado: Activo              
-     *        
+     *         nombre: Alumno - Presencial o Semipresencial - Docente - Contratado o no Contratado
+     *         estado: Activo
+     *
      */
     /**
      * @swagger
@@ -501,21 +501,21 @@ const swaggerHandler = withSwagger({
      *         id_persona:
      *           type: Number
      *           description: date
-     *         codigo: 
+     *         codigo:
      *           type: Number
      *           description: date
-	   *         horas_total: 
+     *         horas_total:
      *           type: Number
-     *           description: date         
+     *           description: date
      *       required:
      *         - id_persona
      *         - codigo
      *         - horas_total
      *       example:
      *         id_persona: 1
-     *         codigo: 201811411 
-     *         horas_total: 20 horas               
-     *        
+     *         codigo: 201811411
+     *         horas_total: 20 horas
+     *
      */
     /**
      * @swagger
@@ -533,20 +533,20 @@ const swaggerHandler = withSwagger({
      *         id_periodos:
      *           type: Number
      *           description: date
-     *         nombre: 
+     *         nombre:
      *           type: Number
      *           description: date
-	   *         estado: 
+     *         estado:
      *           type: String
-     *           description: date         
+     *           description: date
      *       required:
      *         - nombre
      *         - estado
      *       example:
      *         id_periodos: 1
-     *         nombre: Periodo Presencial Semipresencial o a Distancia 
-     *         estado: activo               
-     *        
+     *         nombre: Periodo Presencial Semipresencial o a Distancia
+     *         estado: activo
+     *
      */
     /**
      * @swagger
@@ -564,30 +564,30 @@ const swaggerHandler = withSwagger({
      *         id_persona:
      *           type: Number
      *           description: date
-     *         nombre: 
+     *         nombre:
      *           type: Number
      *           description: date
-     *         appaterno: 
+     *         appaterno:
      *           type: String
      *           description: date
-     *         apmaterno: 
+     *         apmaterno:
      *           type: String
      *           description: date
-     *         dni: 
+     *         dni:
      *           type: Number
      *           description: date
-     *         direccion: 
+     *         direccion:
      *           type: String
      *           description: date
-     *         correo: 
+     *         correo:
      *           type: String
      *           description: date
-     *         numero: 
+     *         numero:
      *           type: Number
      *           description: date
-	   *         fecha_registro: 
+     *         fecha_registro:
      *           type: Date
-     *           description: date         
+     *           description: date
      *       required:
      *         - nombre
      *         - appaterno
@@ -599,15 +599,15 @@ const swaggerHandler = withSwagger({
      *         - fecha_registro
      *       example:
      *         id_periodos: 1
-     *         nombre: Jose 
+     *         nombre: Jose
      *         appaterno: Condori
      *         apmaterno: Ccapa
      *         dni: 72819237
-     *         direccion: Av. Los Geranios N-16 
+     *         direccion: Av. Los Geranios N-16
      *         correo: angel.cc
      *         numero: 987213721
-     *         fecha_registro: 12-12-22               
-     *        
+     *         fecha_registro: 12-12-22
+     *
      */
     /**
      * @swagger
@@ -617,9 +617,64 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     personasrol:
+     *       type: object
+     *       properties:
+     *         id_persona_rol:
+     *           type: Number
+     *           description: date
+     *         id_persona:
+     *           type: Number
+     *           description: date
+     *         id_rol:
+     *           type: Number
+     *           description: date
+     *         estado:
+     *           type: String
+     *           description: date
+     *       required:
+     *         - id_persona
+     *         - id_rol
+     *         - estado
+     *
+     *       example:
+     *         id_persona: 1
+     *         id_rol : 1
+     *         estado: activo
+     *
+     */
+    /**
+     * @swagger
      * tags:
      *   name: plan_medios
      *   description: el plan de vinculacion con el medio que escuela estara
+     */
+    /**
+     * @swagger
+     * components:
+     *   schemas:
+     *     plan_medios:
+     *       type: object
+     *       properties:
+     *         id_plan:
+     *           type: Number
+     *           description: date
+     *         id_escuela_sucursal:
+     *           type: Number
+     *           description: date
+     *         id_vinculacion:
+     *           type: Number
+     *           description: date
+     *       required:
+     *         - id_escuela_sucursal
+     *         - id_vinculacion
+     *
+     *       example:
+     *         id_escuela_sucursal: 1
+     *         id_vinculacion : 1
+     *
      */
     /**
      * @swagger
@@ -629,9 +684,102 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     plan_participantes:
+     *       type: object
+     *       properties:
+     *         id_plan_participante:
+     *           type: Number
+     *           description: date
+     *         id_carga_plan:
+     *           type: Number
+     *           description: date
+     *         id_persona:
+     *           type: Number
+     *           description: date
+     *         certificado:
+     *           type: String
+     *           description: date
+     *         estado:
+     *           type: String
+     *           description: date
+     *         horas:
+     *           type: Number
+     *           description: date
+     *       required:
+     *         - id_carga_plan
+     *         - id_persona
+     *         - certificado
+     *         - estado
+     *         - horas
+     *
+     *       example:
+     *         id_carga_plan: 1
+     *         id_persona: 1
+     *         certificado: si
+     *         estado: activo
+     *         horas: 2
+     *
+     */
+    /**
+     * @swagger
      * tags:
      *   name: plan_sesiones
      *   description: es donde se almacena la sesion de un dia
+     */
+    /**
+     * @swagger
+     * components:
+     *   schemas:
+     *     plan_sesiones:
+     *       type: object
+     *       properties:
+     *         id_plan_sesion:
+     *           type: Number
+     *           description: date
+     *         id_carga_plan:
+     *           type: Number
+     *           description: date
+     *         detalle:
+     *           type: String
+     *           description: date
+     *         fecha_sesion:
+     *           type: Date
+     *           description: date
+     *         fin_sesion:
+     *           type: Date
+     *           description: date
+     *         horas:
+     *           type: Number
+     *           description: date
+     *         evidencia:
+     *           type: String
+     *           description: date
+     *         tolerancia_fecha_sesion:
+     *           type: Date
+     *           description: date
+     *         tolerancia_fin_sesion:
+     *           type: Date
+     *           description: date
+     *       required:
+     *         - id_carga_plan
+     *         - detalle
+     *         - fecha_sesion
+     *         - fin_sesion
+     *         - horas
+     *         - evidencia
+     *
+     *       example:
+     *         id_carga_plan: 1
+     *         detalle: primera sesion
+     *         fecha_sesion: 2022-12-07T21:20:00.000Z
+     *         fin_sesion: 2022-12-07T22:21:00.000Z
+     *         horas: 2
+     *         evidencia: si
+     *         tolerancia_fecha_sesion: 2022-12-07T21:25:00.000Z
+     *         tolerancia_fin_sesion: 2022-12-07T22:26:00.000Z
+     *
      */
     /**
      * @swagger
@@ -641,15 +789,102 @@ const swaggerHandler = withSwagger({
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     roles:
+     *       type: object
+     *       properties:
+     *         id_rol:
+     *           type: Number
+     *           description: date
+     *         nombre:
+     *           type: String
+     *           description: date
+     *         estado:
+     *           type: String
+     *           description: date
+     *       required:
+     *         - nombre
+     *         - estado
+     *
+     *       example:
+     *         nombre: estudiante
+     *         estado: activo
+     */
+    /**
+     * @swagger
      * tags:
      *   name: sucursales
      *   description: el nombre de la sucursal
      */
     /**
      * @swagger
+     * components:
+     *   schemas:
+     *     sucursales:
+     *       type: object
+     *       properties:
+     *         id_sucursal:
+     *           type: Number
+     *           description: date
+     *         nombre:
+     *           type: String
+     *           description: date
+     *         estado:
+     *           type: String
+     *           description: date
+     *       required:
+     *         - nombre
+     *         - estado
+     *
+     *       example:
+     *         nombre: Universidad Peruana Union Lima
+     *         estado: activo
+     */
+    /**
+     * @swagger
      * tags:
      *   name: vinculaciones
      *   description: el nombre del programa de  vinculacion con el medio
+     */
+    /**
+     * @swagger
+     * components:
+     *   schemas:
+     *     vinculaciones:
+     *       type: object
+     *       properties:
+     *         id_vinculacion:
+     *           type: Number
+     *           description: date
+     *         nombre:
+     *           type: String
+     *           description: date
+     *         detalle:
+     *           type: String
+     *           description: date
+     *         tipo:
+     *           type: String
+     *           description: date
+     *         archivo:
+     *           type: String
+     *           description: date
+     *         estado:
+     *           type: String
+     *           description: date
+     *       required:
+     *         - nombre
+     *         - detalle
+     *         - tipo
+     *         - archivo
+     *         - estado
+     *
+     *       example:
+     *         nombre: Programa de Vinculacio1
+     *         detalle: primera  session
+     *         tipo: programa
+     *         archivo: .docx
+     *         estado: activo
      */
   },
   apiFolder: "pages/api",

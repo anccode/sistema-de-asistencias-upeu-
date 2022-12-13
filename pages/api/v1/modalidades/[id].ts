@@ -7,6 +7,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   switch (method) {
     case "GET":
+      /**
+       * @swagger
+       * /api/v1/modalidades/{id}:
+       *  get:
+       *    summary: esta funcion muestra una lista de escuela sucursal por el id
+       *    tags: [modalidades]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: sucursal encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/modalidades"
+       *      404:
+       *        description: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: '#/components/schemas/nofound'
+       *
+       */
       try {
         const id_modalidad = [req.query.id];
         const getModalidad = await ModelModalidad.findOne({
@@ -17,6 +40,36 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "PUT":
+      /**
+       * @swagger
+       * /api/v1/modalidades/{id}:
+       *  put:
+       *    summary: actualizar por id
+       *    tags: [modalidades]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    requestBody:
+       *      required: true
+       *      content:
+       *        application/json:
+       *          schema:
+       *            $ref: "#/components/schemas/modalidades"
+       *    responses:
+       *      200:
+       *        description: actualizo el dato
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/modalidades"
+       *      404:
+       *        description: error
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/nofound"
+       *
+       *
+       */
       try {
         const id_modalidad = [req.query.id];
         const { nombre, estado, alias } = req.body;
@@ -32,6 +85,28 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "DELETE":
+      /**
+       * @swagger
+       * /api/v1/modalidades/{id}:
+       *  delete:
+       *    summary: eliminar asistencia
+       *    tags: [modalidades]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: la asistencia fue eliminada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/modalidades"
+       *      404:
+       *        decription: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/nofound"
+       */
       try {
         const id_modalidad = [req.query.id];
         await ModelModalidad.destroy({

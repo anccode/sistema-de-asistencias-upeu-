@@ -7,6 +7,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   switch (method) {
     case "GET":
+      /**
+       * @swagger
+       * /api/v1/escuelasSucur/{id}:
+       *  get:
+       *    summary: esta funcion muestra una lista de escuela sucursal por el id
+       *    tags: [escuela_sucursal]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: sucursal encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/escuela_sucursal"
+       *      404:
+       *        description: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: '#/components/schemas/nofound'
+       *
+       */
       try {
         const id_escuela_sucursal = [req.query.id];
         const getEscuelaSucur = await ModelEscuela_sucursal.findOne({
@@ -17,6 +40,36 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "PUT":
+      /**
+       * @swagger
+       * /api/v1/escuelasSucur/{id}:
+       *  put:
+       *    summary: actualizar por id
+       *    tags: [escuela_sucursal]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    requestBody:
+       *      required: true
+       *      content:
+       *        application/json:
+       *          schema:
+       *            $ref: "#/components/schemas/escuela_sucursal"
+       *    responses:
+       *      200:
+       *        description: actualizo el dato
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/escuela_sucursal"
+       *      404:
+       *        description: error
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/nofound"
+       *
+       *
+       */
       try {
         const id_escuela_sucursal = [req.query.id];
         const { id_escuela, id_sucursal, estado } = req.body;
@@ -32,6 +85,28 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "DELETE":
+      /**
+       * @swagger
+       * /api/v1/escuelasSucur/{id}:
+       *  delete:
+       *    summary: eliminar asistencia
+       *    tags: [escuela_sucursal]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: la asistencia fue eliminada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/escuela_sucursal"
+       *      404:
+       *        decription: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/nofound"
+       */
       try {
         const id_escuela_sucursal = [req.query.id];
         await ModelEscuela_sucursal.destroy({

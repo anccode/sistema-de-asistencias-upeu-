@@ -6,6 +6,23 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   switch (method) {
     case "GET":
+      /**
+       * @swagger
+       * /api/v1/facultades:
+       *  get:
+       *    summary: date
+       *    tags: [facultades]
+       *    responses:
+       *      200:
+       *        description: lista de docentes
+       *        content:
+       *          application/json:
+       *            schema:
+       *              type: array
+       *              items:
+       *                $ref: '#/components/schemas/facultades'
+       *
+       */
       try {
         const facultades = await ModelFacultad.findAll();
         return res.status(200).json(facultades);
@@ -13,6 +30,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "POST":
+      /**
+       * @swagger
+       * /api/v1/facultades:
+       *  post:
+       *    summary: date
+       *    tags: [facultades]
+       *    requestBody:
+       *      required: true
+       *      content:
+       *        application/json:
+       *          schema:
+       *            $ref: "#/components/schemas/facultades"
+       *    responses:
+       *      200:
+       *        description: date
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/facultades"
+       *      500:
+       *        description: error
+       *
+       */
       try {
         const { nombre, estado, alias } = req.body;
         const newEscuelaSucur = await ModelFacultad.create({
