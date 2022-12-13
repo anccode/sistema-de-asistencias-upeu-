@@ -7,6 +7,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   switch (method) {
     case "GET":
+      /**
+       * @swagger
+       * /api/v1/personasrol/{id}:
+       *  get:
+       *    summary: esta funcion muestra una lista de escuela sucursal por el id
+       *    tags: [personas_rol]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: sucursal encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/personasrol"
+       *      404:
+       *        description: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: '#/components/schemas/nofound'
+       *
+       */
       try {
         const id_personas_rol = [req.query.id];
         const getPersonas_rol = await ModelPersona_rol.findOne({
@@ -17,6 +40,36 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "PUT":
+      /**
+       * @swagger
+       * /api/v1/personasrol/{id}:
+       *  put:
+       *    summary: actualizar por id
+       *    tags: [personas_rol]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    requestBody:
+       *      required: true
+       *      content:
+       *        application/json:
+       *          schema:
+       *            $ref: "#/components/schemas/personasrol"
+       *    responses:
+       *      200:
+       *        description: actualizo el dato
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/personasrol"
+       *      404:
+       *        description: error
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/nofound"
+       *
+       *
+       */
       try {
         const id_persona_rol = [req.query.id];
         const { id_persona, id_rol, estado } = req.body;
@@ -32,6 +85,28 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "DELETE":
+      /**
+       * @swagger
+       * /api/v1/personasrol/{id}:
+       *  delete:
+       *    summary: eliminar asistencia
+       *    tags: [personas_rol]
+       *    parameters:
+       *      - $ref: "#/components/parameters/id"
+       *    responses:
+       *      200:
+       *        description: la asistencia fue eliminada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/personasrol"
+       *      404:
+       *        decription: asistencia no encontrada
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#components/schemas/nofound"
+       */
       try {
         const id_persona = [req.query.id];
         await ModelPersona_rol.destroy({

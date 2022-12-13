@@ -31,9 +31,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
        *
        */
       try {
-        const id_participantes = [req.query.id];
+        const id_persona = [req.query.id];
         const getParticipantes = await ModelParticipante.findOne({
-          where: { id_participantes },
+          where: { id_persona },
         });
         return res.status(200).json(getParticipantes);
       } catch (error) {
@@ -71,14 +71,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
        *
        */
       try {
-        const id_participantes = [req.query.id];
-        const { id_persona, codigo, horas_total } = req.body;
+        const id_persona = [req.query.id];
+        const { codigo, horas_total } = req.body;
         const newParticipante = await ModelParticipante.update(
-          { id_persona, codigo, horas_total },
-          { where: { id_participantes } }
+          { codigo, horas_total },
+          { where: { id_persona } }
         );
         const participante = await ModelParticipante.findOne({
-          where: { id_participantes },
+          where: { id_persona },
         });
         return res.status(200).json(participante);
       } catch (error) {
@@ -108,10 +108,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
        *              $ref: "#components/schemas/nofound"
        */
       try {
-        const id_participantes = [req.query.id];
+        const id_persona = [req.query.id];
         await ModelParticipante.destroy({
           where: {
-            id_participantes,
+            id_persona,
           },
         });
         return res.send(200);

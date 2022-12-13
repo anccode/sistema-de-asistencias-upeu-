@@ -514,7 +514,7 @@ const swaggerHandler = withSwagger({
      *       example:
      *         id_persona: 1
      *         codigo: 201811411
-     *         horas_total: 20 horas
+     *         horas_total: 20
      *
      */
     /**
@@ -544,7 +544,7 @@ const swaggerHandler = withSwagger({
      *         - estado
      *       example:
      *         id_periodos: 1
-     *         nombre: Periodo Presencial Semipresencial o a Distancia
+     *         nombre: 2022-2
      *         estado: activo
      *
      */

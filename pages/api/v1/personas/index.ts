@@ -7,6 +7,23 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 	switch (method) {
 		case 'GET':
+			/**
+       * @swagger
+       * /api/v1/personas:
+       *  get:
+       *    summary: date
+       *    tags: [personas]
+       *    responses:
+       *      200:
+       *        description: lista de docentes
+       *        content:
+       *          application/json:
+       *            schema:
+       *              type: array
+       *              items:
+       *                $ref: '#/components/schemas/personas'
+       *
+       */
 			try {
 				const personas = await ModelPersona.findAll();
 				return res.status(200).json(personas);
@@ -14,6 +31,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 				return res.status(500).json({ message: error });
 			}
 		case 'POST':
+			/**
+       * @swagger
+       * /api/v1/personas:
+       *  post:
+       *    summary: date
+       *    tags: [personas]
+       *    requestBody:
+       *      required: true
+       *      content:
+       *        application/json:
+       *          schema:
+       *            $ref: "#/components/schemas/personas"
+       *    responses:
+       *      200:
+       *        description: date
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/personas"
+       *      500:
+       *        description: error
+       *
+       */
 			try {
 				const {
 					id_persona,

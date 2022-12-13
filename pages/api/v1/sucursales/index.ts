@@ -6,6 +6,23 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   switch (method) {
     case "GET":
+      /**
+       * @swagger
+       * /api/v1/sucursales:
+       *  get:
+       *    summary: date
+       *    tags: [sucursales]
+       *    responses:
+       *      200:
+       *        description: lista de docentes
+       *        content:
+       *          application/json:
+       *            schema:
+       *              type: array
+       *              items:
+       *                $ref: '#/components/schemas/sucursales'
+       *
+       */
       try {
         const sucursales = await ModelSucursal.findAll();
         return res.status(200).json(sucursales);
@@ -13,6 +30,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: error });
       }
     case "POST":
+      /**
+       * @swagger
+       * /api/v1/sucursales:
+       *  post:
+       *    summary: date
+       *    tags: [sucursales]
+       *    requestBody:
+       *      required: true
+       *      content:
+       *        application/json:
+       *          schema:
+       *            $ref: "#/components/schemas/sucursales"
+       *    responses:
+       *      200:
+       *        description: date
+       *        content:
+       *          application/json:
+       *            schema:
+       *              $ref: "#/components/schemas/sucursales"
+       *      500:
+       *        description: error
+       *
+       */
       try {
         const { id_sucursal, nombre, estado } = req.body;
         const newSucursal= await ModelSucursal.create({
